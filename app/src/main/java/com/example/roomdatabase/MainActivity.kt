@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         val mName = binding.name.text.toString().trim()
         val mAge = binding.age.text.toString().trim()
 
-        if (TextUtils.isEmpty(mName) && !TextUtils.isEmpty(mAge)){
+        if (!TextUtils.isEmpty(mName) && !TextUtils.isEmpty(mAge)){
             val  user = User(mName,mAge.toInt())
             userViewModel.insert(user)
             Toast.makeText(applicationContext,"Inserted Succesfully",Toast.LENGTH_SHORT).show()
